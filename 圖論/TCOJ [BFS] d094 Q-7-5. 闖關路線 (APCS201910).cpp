@@ -22,7 +22,6 @@ int main(){
         }
         q.pop();
         // ¬Û¾FªºÂI
-        int left = s[now - l];
         if(now - l >= 0){
             int left = s[now - l];
             if(left >= 0 && left < n && !vis[left]){
