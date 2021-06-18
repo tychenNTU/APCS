@@ -67,7 +67,7 @@ int main(){
 					break;
 				}
 				if(wall[next_y][next_x] ||
-					(fire_time[next_y][next_x] <= now_step + 1 && fire_time[next_y][next_x] ||
+					(fire_time[next_y][next_x] <= now_step + 1 && fire_time[next_y][next_x] != -1) ||
 						vis[next_y][next_x]) continue;
 				vis[next_y][next_x] = true;
 				q.push({{next_y, next_x}, now_step + 1});
