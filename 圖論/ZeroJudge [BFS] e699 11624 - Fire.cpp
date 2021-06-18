@@ -3,14 +3,19 @@
 using namespace std;
 
 int main(){
-	int t, r, c, fire_time[1010][1010], start_y, start_x;
+	int t, r, c, fire_time[101][101], start_y, start_x;
 	int dir_x[4] = {1, 0, -1, 0}, dir_y[4] = {0, 1, 0, -1};
-	bool wall[1010][1010];
+	bool wall[101][101];
 	string x;
 	cin >> t;
-	for(int q = 0;q < t;q ++){
+	for(int qq = 0;qq < t;qq ++){
 		queue<pair<pair<int, int>, int>> q;
 		cin >> r >> c;
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				fire_time[i][j] = -1;
+			}
+		}
 		for(int i=0;i<r;i++){
 			cin >> x;
 			for(int j=0;j<c;j++){
@@ -38,6 +43,12 @@ int main(){
 				q.push({{next_y, next_x}, now_step + 1});
 			}
 		}
+		/*for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++){
+				cout << "\t" << fire_time[i][j];
+			}
+			cout << "\n";
+		}*/
 	}
     return 0;
 }
